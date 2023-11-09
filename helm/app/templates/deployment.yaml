@@ -51,9 +51,11 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           {{- with .Values.volumeMounts }}
-          envFrom:
-            - secretRef:
-                name: entigo-demo-bucket
+
+
+          # envFrom:
+          #   - secretRef:
+          #       name: entigo-demo-bucket
 
           volumeMounts:
             {{- toYaml . | nindent 12 }}
